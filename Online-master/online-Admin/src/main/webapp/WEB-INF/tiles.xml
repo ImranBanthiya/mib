@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tilles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="Baselayout" id="Baselayout"
+		template="/WEB-INF/layout/Baselayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/layout/header.jsp"></put-attribute>
+		<put-attribute name="body" value="${body}"></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+	</definition>
+
+	<definition name="Baselayout1" id="Baselayout1"
+		template="/WEB-INF/layout/Baselayout1.jsp">
+		<put-attribute name="body" value="${body}"></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+	</definition>
+	<!-- template definition for body and footer -->
+	<!-- for whole page header,menu,body and footer -->
+	<definition name="registration" extends="Baselayout1">
+		<put-attribute name="body" value="/WEB-INF/jsp/registration.jsp"></put-attribute>
+	</definition>
+	<definition name="login" id="login" extends="Baselayout1">
+		<put-attribute name="body" value="/WEB-INF/jsp/login.jsp"></put-attribute>
+	</definition>
+
+	<definition name="addquestion" extends="Baselayout">
+		<put-attribute name="body" value="/WEB-INF/jsp/addquestion.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>
